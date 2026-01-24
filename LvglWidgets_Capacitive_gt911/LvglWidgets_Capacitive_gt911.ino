@@ -26,12 +26,12 @@
  * #define LV_USE_PERF_MONITOR 1
  ******************************************************************************/
 //#include "lv_demo_widgets.h"
-#include <lvgl.h>
+#include <lvgl.h> // using 8.3.11
 //#include <demos/lv_demos.h>
 #include "demos/widgets/lv_demo_widgets.h"
 /*******************************************************************************
  ******************************************************************************/
-#include <Arduino_GFX_Library.h>
+#include <Arduino_GFX_Library.h> // should use library 1.6.5 when it will be released, as of 2026-01-24 uses a git clone of https://github.com/moononournation/Arduino_GFX
 
 #define GFX_BL DF_GFX_BL // default backlight pin, you may replace DF_GFX_BL to actual backlight pin
 #define TFT_BL 27
@@ -126,13 +126,13 @@ void setup()
   // ledcWrite(0, 255); /* Screen brightness can be modified by adjusting this parameter. (0-255) */
   analogWrite(TFT_BL,100);
 #endif
-  gfx->fillScreen(RED);
+  gfx->fillScreen(RGB565_RED);
   delay(1000);
-  gfx->fillScreen(GREEN);
+  gfx->fillScreen(RGB565_GREEN);
   delay(1000);
-  gfx->fillScreen(BLUE);
+  gfx->fillScreen(RGB565_BLUE);
   delay(1000);
-  gfx->fillScreen(BLACK);
+  gfx->fillScreen(RGB565_BLACK);
   //delay(1000);
   lv_init();
   delay(20);
