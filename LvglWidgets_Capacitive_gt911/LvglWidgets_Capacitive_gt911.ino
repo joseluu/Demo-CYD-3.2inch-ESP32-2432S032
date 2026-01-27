@@ -32,6 +32,10 @@
 /*******************************************************************************
  ******************************************************************************/
 #include <Arduino_GFX_Library.h> // should use library 1.6.5 when it will be released, as of 2026-01-24 uses a git clone of https://github.com/moononournation/Arduino_GFX
+/*******************************************************************************
+ * Please config the touch panel in touch.cpp
+ ******************************************************************************/
+#include "touch.h"
 
 #define GFX_BL DF_GFX_BL // default backlight pin, you may replace DF_GFX_BL to actual backlight pin
 #define TFT_BL 27
@@ -51,11 +55,6 @@ Arduino_GFX *gfx = new Arduino_ST7789(bus, -1 /* RST */, 3 /* rotation */, true 
 /*******************************************************************************
  * End of Arduino_GFX setting
  ******************************************************************************/
-
-/*******************************************************************************
- * Please config the touch panel in touch.h
- ******************************************************************************/
-#include "touch.h"
 
 /* Change to your screen resolution */
 static uint32_t screenWidth;
